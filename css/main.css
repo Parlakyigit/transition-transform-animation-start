@@ -91,3 +91,63 @@
 .transform .b4:hover {
   transform: skewX(0) skewY(0);
 }
+/* css animation*/
+@keyframes changeColor {
+  from {
+    background-color: #9696ff;
+  }
+  to {
+    background-color: rgb(255, 0, 51);
+  }
+}
+
+.animation .b1 {
+  animation-name: changeColor;
+  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveAround {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(200px, 0);
+  }
+  50% {
+    transform: translate(200px, 200px);
+  }
+  75% {
+    transform: translate(0, 200px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.animation .b2 {
+  animation: moveAround 4s;
+  animation-delay: 3s;
+  animation-iteration-count: 3;
+}
+@keyframes transformeMe {
+  0% {
+    transform: scale(0.5) rotateX(0) translateX(0);
+  }
+  100% {
+    transform: scale(1) rotateX(180deg) translateX(600px);
+  }
+}
+
+.animation .b3 {
+  animation: transformeMe 1.5s ease-out 3s 12 alternate forwards;
+}
+.animation .b3:hover {
+  animation-play-state: paused;
+}
+.animation .b4 {
+  animation: transformeMe 1.5s ease-out 3s 12 alternate forwards;
+}
+.animation .b4:active {
+  animation-play-state: paused;
+}
